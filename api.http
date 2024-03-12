@@ -1,0 +1,47 @@
+### FindAll - Order
+GET http://localhost:3000/orders HTTP/1.1
+
+### FindOne - Order
+GET http://localhost:3000/orders/1 HTTP/1.1
+
+### Create - Order
+POST http://localhost:3000/orders HTTP/1.1
+Content-Type: application/json
+
+{
+    "description": "order-c {{$randomInt 0 100}}"
+}
+
+### Update - Order
+PATCH http://localhost:3000/orders/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "description": "order-u {{$randomInt 0 100}}"
+}
+
+### Completed - Order
+PUT http://localhost:3000/orders/completed/2 HTTP/1.1
+
+### Canceled - Order
+PUT http://localhost:3000/orders/canceled/3 HTTP/1.1
+
+### FindAll - Webhook
+GET http://localhost:3000/webhooks HTTP/1.1
+
+### Create - Webhook
+POST http://localhost:3000/webhooks HTTP/1.1
+Content-Type: application/json
+
+{
+    "url": "https://webhook.site/18b82833-b3a6-4e20-8818-c877b38c5715"
+}
+
+### Update - Webhook
+PATCH http://localhost:3000/webhooks/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "url": "https://webhook.site/18b82833-b3a6-4e20-8818-c877b38c5715",
+    "status": false
+}
